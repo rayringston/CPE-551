@@ -1,2 +1,18 @@
 # CPE-551
-Course project repository for CPE-551, Engineering Programming: Python
+
+#_Project Title_
+
+## Group Members
+
+Ray Ringston - rringsto@stevens.edu - 20014983
+
+Andrea Antropow: aantrop1@stevens.edu - __put your id__
+
+## Project Description
+
+### Overview
+### Dependencies
+### File Structure
+
+## Instructions to Run Program
+## Contributions
