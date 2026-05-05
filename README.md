@@ -58,6 +58,7 @@ Ray Ringston
 - Implemented core classes (`Component`, `LCCircuit`)  
 - Developed simulation logic and time-stepping method  
 - Implemented waveform analysis and frequency calculation
+  
 Andrea Antropow
 - Assisted with system modeling and circuit theory
 - Handled user input and validation
