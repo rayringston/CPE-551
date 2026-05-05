@@ -54,3 +54,11 @@ The following Python libraries are required:
 
 7. Close the graph window to end the program.
 ## Contributions
+Ray Ringston
+- Implemented core classes (`Component`, `LCCircuit`)  
+- Developed simulation logic and time-stepping method  
+- Implemented waveform analysis and frequency calculation
+Andrea Antropow
+- Assisted with system modeling and circuit theory
+- Handled user input and validation
+- Contributed to testing and debugging 
