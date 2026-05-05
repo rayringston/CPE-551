@@ -38,19 +38,19 @@ The following Python libraries are required:
 3. Navigate to the folder containing the program file.
 
 4. Run the program using:
-   - `LCCircuitAnalyzer.py`
+  - `LCCircuitAnalyzer.py`
 
-6. When prompted, enter the required inputs:
-- Inductance (H)  
-- Capacitance (F)  
-- Initial Charge (C)  
-- Initial Current (A)  
-- Simulation Time (s)  
-- Time Step (s)
+5. When prompted, enter the required inputs:
+  - Inductance (H)  
+  - Capacitance (F)  
+  - Initial Charge (C)  
+  - Initial Current (A)  
+  - Simulation Time (s)  
+  - Time Step (s)
   
 6. After entering inputs:
-- The program will display the calculated resonant frequency in the terminal  
-- A graph will appear showing voltage and current versus time  
+  - The program will display the calculated resonant frequency in the terminal  
+  - A graph will appear showing voltage and current versus time  
 
 7. Close the graph window to end the program.
 ## Contributions
