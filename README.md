@@ -38,8 +38,7 @@ The following Python libraries are required:
 3. Navigate to the folder containing the program file.
 
 4. Run the program using:
-   ```bash
-   LCCircuitAnalyzer.py
+   `LCCircuitAnalyzer.py`
 
 5. When prompted, enter the required inputs:
 - Inductance (H)  
