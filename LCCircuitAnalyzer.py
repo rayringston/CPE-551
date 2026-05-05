@@ -24,7 +24,7 @@ class LCCircuit:
         return f"{self.inductor}\n{self.capacitor}"
 
 
-    def setInitialConditions(self, intitialCharge, initialCurrent=0):
+    def setInitialConditions(self, initialCharge, initialCurrent=0):
         self.capacitor.charge = initialCharge
         self.inductor.current = initialCurrent
     
