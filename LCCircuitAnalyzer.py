@@ -25,7 +25,7 @@ class LCCircuit:
 
 
     def setInitialConditions(self, intitialCharge, initialCurrent=0):
-        self.capacitor.charge = intitialCharge
+        self.capacitor.charge = initialCharge
         self.inductor.current = initialCurrent
     
     def stepTime(self, dt):
