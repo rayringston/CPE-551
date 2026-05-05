@@ -103,6 +103,7 @@ try:
 except ValueError as e:
     print(f"Input Error: {e}")
 
+# Graph
 import matplotlib.pyplot as plt
 time = np.arange(0, initialcharge, initialcurrent)
 plt.plot(time, lc.voltages, label="Voltage (V)")
