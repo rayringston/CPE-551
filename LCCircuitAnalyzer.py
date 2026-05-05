@@ -77,14 +77,34 @@ class LCCircuit:
             print("No oscillations detected.")
             return None
                     
+try:
+    # Get user input
+    L = float(input("Enter inductance (H): "))
+    C = float(input("Enter capacitance (F): "))
+    initialcharge = float(input("Enter initial charge (C): "))
+    initialcurrent = float(input("Enter initial current (A): "))
+    simTime = float(input("Enter simulation time (s): "))
+    dt = float(input("Enter time step (s): "))
 
-lc = LCCircuit(1, 1)
-lc.setInitialConditions(10)
-lc.simulate(10, 0.0001)
-lc.analyze()
+    # Validation
+    if L <= 0 or C <= 0:
+        raise ValueError("Inductance and capacitance must be positive.")
+    if dt <= 0 or simTime <= 0:
+        raise ValueError("Time and timestep must be positive.")
+    if dt > simTime:
+        raise ValueError("Timestep must be smaller than simulation time.")
+
+    # Create and run circuit
+    lc = LCCircuit(L, C)
+    lc.setInitialConditions(initialcharge, initialcurrent)
+    lc.simulate(simTime, dt)
+    lc.analyze()
+
+except ValueError as e:
+    print(f"Input Error: {e}")
 
 import matplotlib.pyplot as plt
-time = np.arange(0, 10, 0.0001)
+time = np.arange(0, initialcharge, initialcurrent)
 plt.plot(time, lc.voltages, label="Voltage (V)")
 plt.plot(time, lc.currents, label="Current (A)")
 
