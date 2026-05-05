@@ -99,18 +99,18 @@ try:
     lc.setInitialConditions(initialcharge, initialcurrent)
     lc.simulate(simTime, dt)
     lc.analyze()
+    # Graph
+    import matplotlib.pyplot as plt
+    time = np.arange(0, simTime, dt)
+    plt.plot(time, lc.voltages, label="Voltage (V)")
+    plt.plot(time, lc.currents, label="Current (A)")
+
+    plt.xlabel("Time (s)")
+    plt.ylabel("Value")
+    plt.legend()
+
+    plt.show()
 
 except ValueError as e:
     print(f"Input Error: {e}")
 
-# Graph
-import matplotlib.pyplot as plt
-time = np.arange(0, initialcharge, initialcurrent)
-plt.plot(time, lc.voltages, label="Voltage (V)")
-plt.plot(time, lc.currents, label="Current (A)")
-
-plt.xlabel("Time (s)")
-plt.ylabel("Value")
-plt.legend()
-
-plt.show()
