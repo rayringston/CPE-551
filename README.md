@@ -32,14 +32,16 @@ The following Python libraries are required:
 1. Make sure Python 3 is installed on your system.
 
 2. Install required libraries by running the following command in your terminal:
+   ```bash
    pip install numpy matplotlib
 
-4. Navigate to the folder containing the program file.
+3. Navigate to the folder containing the program file.
 
-5. Run the program using:
+4. Run the program using:
+   ```bash
    LCCircuitAnalyzer.py
 
-6. When prompted, enter the required inputs:
+5. When prompted, enter the required inputs:
 - Inductance (H)  
 - Capacitance (F)  
 - Initial Charge (C)  
