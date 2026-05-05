@@ -38,9 +38,9 @@ The following Python libraries are required:
 3. Navigate to the folder containing the program file.
 
 4. Run the program using:
-   `LCCircuitAnalyzer.py`
+   -`LCCircuitAnalyzer.py`
 
-5. When prompted, enter the required inputs:
+6. When prompted, enter the required inputs:
 - Inductance (H)  
 - Capacitance (F)  
 - Initial Charge (C)  
