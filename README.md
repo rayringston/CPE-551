@@ -24,6 +24,7 @@ The following Python libraries are required:
 - `numpy`  
 - `matplotlib`
 - `pandas`
+  
 Jupyter Notebook needs to be installed to run `main.ipynb` 
 
 ### File Structure
