@@ -1,19 +1,23 @@
 import math
 import numpy as np
 import matplotlib.pyplot as plt
+import pytest
 
 from lc_circuit import LCCircuit
-
+from component import Component
 
 def main():
 
     try:
-        L = float(input("Enter inductance (H): "))
-        C = float(input("Enter capacitance (F): "))
-        initialcharge = float(input("Enter initial charge (C): "))
-        initialcurrent = float(input("Enter initial current (A): "))
-        simTime = float(input("Enter simulation time (s): "))
-        dt = float(input("Enter time step (s): "))
+        print("Enter the following values: ")
+        L = float(input("\tInductance (H): "))
+        C = float(input("\tCapacitance (F): "))
+
+        initialcharge = float(input("\tInitial charge (C): "))
+        initialcurrent = float(input("\tInitial current (A): "))
+
+        simTime = float(input("\tSimulation time (s): "))
+        dt = float(input("\tTime step (s): "))
 
         if L <= 0 or C <= 0:
             raise ValueError("Inductance and capacitance must be positive.")
@@ -29,27 +33,53 @@ def main():
         return
 
     else:
-        lc = LCCircuit(L, C)
+        lc1 = LCCircuit(L, C)
 
-        lc.setInitialConditions(initialcharge, initialcurrent)
+        lc1.setInitialConditions(initialcharge, initialcurrent)
 
-        lc.simulate(simTime, dt)
-
-        lc.analyze()
+        lc1.simulate(simTime, dt)
+        lc1.analyze()
 
         time = np.arange(0, simTime, dt)
 
-        plt.plot(time, lc.voltages, label="Voltage (V)")
-        plt.plot(time, lc.currents, label="Current (A)")
+        plt.plot(time, lc1.voltages, label="Voltage (baseline)")
+        plt.plot(time, lc1.currents, label="Current (baseline)")
 
         plt.xlabel("Time (s)")
         plt.ylabel("Value")
-
         plt.legend()
-
+        plt.title("Baseline LC Circuit")
         plt.show()
 
-        saveChoice = input("Would you like to export the waveform data to Excel? (Y/N): ").lower().strip()
+        lc2 = None
+
+        choice = input("\nAdd parallel capacitor and re-analyze? (Y/N): ").lower().strip()
+
+        if choice == "y":
+            extraC = float(input("\tExtra capacitance (F): "))
+
+            c1 = Component("Capacitor", C)
+            c2 = Component("Capacitor", extraC)
+
+            newC = (c1 + c2).value
+
+            lc2 = LCCircuit(L, newC)
+
+            lc2.setInitialConditions(initialcharge, initialcurrent)
+
+            lc2.simulate(simTime, dt)
+            lc2.analyze()
+
+            plt.plot(time, lc2.voltages, label="Voltage (modified)")
+            plt.plot(time, lc2.currents, label="Current (modified)")
+
+            plt.xlabel("Time (s)")
+            plt.ylabel("Value")
+            plt.legend()
+            plt.title("Modified LC Circuit")
+            plt.show()
+
+        saveChoice = input(f"\nWould you like to export the waveform data to Excel? \nThe expected length of the sheet will be {len(lc1)}: (Y/N): ").lower().strip()
 
         if saveChoice == "yes" or saveChoice == "y":
 
@@ -58,7 +88,10 @@ def main():
             if not filename.endswith(".xlsx"):
                 filename += ".xlsx"
 
-            lc.exportToExcel(filename, simTime)
+            lc1.exportToExcel(filename.replace(".xlsx", "_baseline.xlsx"), simTime)
+
+            if lc2 is not None:
+                lc2.exportToExcel(filename.replace(".xlsx", "_modified.xlsx"), simTime)
 
 
 if __name__ == "__main__":
