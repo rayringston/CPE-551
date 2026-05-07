@@ -40,10 +40,11 @@ For this projects, the functions were split into 2 modules, `component.py` and `
 - Perform various analysis and file handling methods
 - Visualizes the results using matplotlib
 
-`main.py`
+`main.ipynb` / `main.py`
 - Handles user input for parameters
 - Performs exception handling and input validation
 - Controls the execution of previous modules
+- `main.py` is an additional file provided, for use outside of the Jupyter environment
 
 ### Testing Framework
 
