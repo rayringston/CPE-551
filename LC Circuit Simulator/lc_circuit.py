@@ -97,6 +97,7 @@ class LCCircuit:
 
             print(f"Simulated Resonant Frequency: {frequency} Hz")
             print(f"Theoretical Resonant Frequency: {theoreticalFrequency} Hz")
+            print(f"Percent Error: {(frequency - theoreticalFrequency) / theoreticalFrequency * 100}")
 
             return frequency
 
