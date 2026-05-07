@@ -24,6 +24,7 @@ The following Python libraries are required:
 - `numpy`  
 - `matplotlib`
 - `pandas`
+Jupyter Notebook needs to be installed to run `main.ipynb` 
 
 ### File Structure
 For this projects, the functions were split into 2 modules, `component.py` and `lc_circuit.py`, and the main file, `main.py`.
@@ -44,21 +45,13 @@ For this projects, the functions were split into 2 modules, `component.py` and `
 - Controls the execution of previous modules
 
 ## Instructions to Run Program
-1. Make sure Python 3 is installed on your system.
+1. Make sure Jupyter Notebook is installed.
 
-2. Install required libraries by running the following command in your terminal:
-   ```bash
-   pip install numpy matplotlib pandas
-   ```
+2. Navigate to the folder containing the program files. Open the file `main.ipynb` in Jupyter Notebook. 
 
-3. Navigate to the folder containing the program files.
+3. Run the program using the Run tab and select "Restart Kernal and Run All Cells".
 
-4. Run the program using:
-
-```bash
-python main.py
-```
-5. When prompted, enter the required inputs:
+4. When prompted, enter the required inputs:
      - Inductance (H)  
      - Capacitance (F)  
      - Initial Charge (C)  
@@ -66,18 +59,18 @@ python main.py
      - Simulation Time (s)  
      - Time Step (s)
   
-6. After entering inputs:
+5. After entering inputs:
      - The program will display the calculated resonant frequency in the terminal
      - It will also print the theoretical value, and the simulations percent error  
      - A graph will appear showing voltage and current versus time
 
-7. Close the graph window to continue
-8. When prompted, choose to rerun the simulation after adding an additional capacitor
+6. Close the graph window to continue
+7. When prompted, choose to rerun the simulation after adding an additional capacitor
       - If accepted, the additional simulation will run
       - The frequency and percent of this simulation will be printed
       - Again, the current and voltage waveforms are displayed in a plot
 
-9. Finally, you will be prompted to save these waveforms to Excel files
+8. Finally, you will be prompted to save these waveforms to Excel files
       - The user will again be prompted to enter a filename, where the simulation results will be saved
       - If the additional run is chosen, the two files will instead be saved as `{filename}_baseline.xlsx` `{filename}_modified.xlsx`
 ## Contributions
@@ -88,6 +81,6 @@ Ray Ringston
   
 Andrea Antropow
    - Assisted with system modeling and circuit theory
-   - Implemented `main.py`
+   - Implemented `main.ipynb`
    - Handled user input and validation
    - Contributed to testing and debugging 
