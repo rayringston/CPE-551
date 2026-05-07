@@ -2,6 +2,12 @@
 Authors: Andrea Antropow & Ray Ringston
 Contact: aantrop1@stevens.edu & rringsto@stevens.edu
 Filename: main.ipynb
+Description: This program simulates and analyzes an LC circuit using user inputed
+inductance, capacitance, initial charge, initial current, simulation
+time, and timestep values. The program generates graphs of voltage
+and current over time, allows the user to add an additional capacitor
+in parallel for comparison, and provides the option to export the
+waveform data to Excel files.
 """
 import numpy as np
 import matplotlib.pyplot as plt
