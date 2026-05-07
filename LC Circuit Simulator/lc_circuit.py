@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 from component import Component
-
+import math
 
 class LCCircuit:
     def __init__(self, L, C):
@@ -93,12 +93,10 @@ class LCCircuit:
             averagePeriod = sum(periods) / len(periods)
             frequency = 1 / averagePeriod
 
-            theoreticalFrequency = 1 / (2 * np.pi * np.sqrt(
-                self.inductor.value * self.capacitor.value
-            ))
+            theoreticalFrequency = 1 / (2 * math.pi * math.sqrt(self.inductor.value * self.capacitor.value))
 
-            print(f"Simulated resonant frequency: {frequency} Hz")
-            print(f"Theoretical resonant frequency: {theoreticalFrequency} Hz")
+            print(f"Simulated Resonant Frequency: {frequency} Hz")
+            print(f"Theoretical Resonant Frequency: {theoreticalFrequency} Hz")
 
             return frequency
 
