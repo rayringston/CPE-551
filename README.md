@@ -45,6 +45,34 @@ For this projects, the functions were split into 2 modules, `component.py` and `
 - Performs exception handling and input validation
 - Controls the execution of previous modules
 
+### Testing Framework
+
+To test the functionality of the LCCircuit class, pytest was used. Two files were used `test_lc_circuit.py`, to test general system functionality, and `test_physics_accuracy`, to measure the accuracy of the analysis. Overall there are 3 test cases, the first, `test_simulation_runs`, ensures that running the simulation will output a waveform. The second, `test_frequency_reasonable`, tests that the analysis will return a defined frequency that is above zero. Finally, the `test_simulation_accuracy` case ensures that analysis feature is within 1% error. To run these test cases, follow the below instructions:
+
+1. Install the pytest module using this command:
+
+```bash
+pip install pytest
+```
+2. Navigate to the root directory of the project, /LC Circuit Simulator
+3. Run the following command to have pytest detect and run any test files:
+
+```bash
+pytest
+```
+4. To run indiviaul test files, navigate to the tests directory, /LC Circuit Simulator/tests
+5. Run these commands to run the respective test files
+
+```bash
+pytest -v test_lc_circuit.py
+pytest -v test_physics_accuracy.py
+```
+6. If the above commands are not recognized in the terminal, use the following commands or visit the (pytest documentation)[https://docs.pytest.org/en/stable/]:
+```bash
+python -m pytest -v test_lc_circuit.py
+python -m pytest -v test_physics_accuracy.py
+```
+
 ## Instructions to Run Program
 1. Make sure Jupyter Notebook is installed.
 
