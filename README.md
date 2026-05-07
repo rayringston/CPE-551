@@ -88,5 +88,6 @@ Ray Ringston
   
 Andrea Antropow
    - Assisted with system modeling and circuit theory
+   - Implemented (`main.py`)
    - Handled user input and validation
    - Contributed to testing and debugging 
