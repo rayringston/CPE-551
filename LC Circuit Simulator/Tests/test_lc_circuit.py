@@ -1,6 +1,5 @@
 import numpy as np
 from lc_circuit import LCCircuit
-import pytest
 
 def test_simulation_runs():
     """
