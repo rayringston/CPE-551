@@ -11,6 +11,12 @@ class LCCircuit:
     def __str__(self):
         return f"{self.inductor}\n{self.capacitor}"
 
+    def __len__(self):
+        if hasattr(self, "simTime") and hasattr(self, "timestep"):
+            return int(self.simTime / self.timestep)
+        else: 
+            return 0
+
     def exportToExcel(self, filename, simTime):
         try:
             time = np.arange(0, simTime, self.timestep)
@@ -43,6 +49,11 @@ class LCCircuit:
         self.capacitor.charge = initialCharge
         self.inductor.current = initialCurrent
 
+    def addParallelCapacitor(self, extraC):
+        c1 = Component("Capacitor", self.capacitor.value)
+        c2 = Component("Capacitor", extraC)
+        self.capacitor = c1 + c2
+
     def stepTime(self, dt):
         dI = -self.capacitor.charge / (self.inductor.value * self.capacitor.value) * dt
         self.inductor.current += dI
@@ -50,6 +61,7 @@ class LCCircuit:
 
     def simulate(self, simTime, dt):
         self.timestep = dt
+        self.simTime = simTime
         steps = int(simTime / dt)
 
         self.voltages = np.zeros(steps)
